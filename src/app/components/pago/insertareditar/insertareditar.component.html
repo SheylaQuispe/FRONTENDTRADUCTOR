@@ -1,0 +1,51 @@
+<div><h1>Registro de pagos</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Pago</mat-label>
+        <input matInput placeholder="123" formControlName="monto" />
+        <mat-error *ngIf="form.get('monto')?.hasError('required')">
+          El monto es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <br />
+      <mat-form-field>
+        <mat-label>Metodo</mat-label>
+        <mat-select>
+          @for (t of metodos; track t) {
+          <mat-option [value]="t.value">{{ t.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <br>
+       <br />
+      <mat-form-field>
+        <mat-label>Fecha:</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fecha')?.hasError('required')">
+          La fecha es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <mat-radio-group
+        aria-label="Select an option"
+        formControlName="estado"
+        [(ngModel)]="estado"
+      >
+        <mat-radio-button [value]="true">Activo</mat-radio-button>
+        <mat-radio-button [value]="false">Inactivo</mat-radio-button>
+      </mat-radio-group>
+      <br />
+      <button matButton="filled">aceptar</button>
+    </form>
+  </div>
+
+
