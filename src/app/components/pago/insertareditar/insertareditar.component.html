@@ -1,25 +1,39 @@
-<div><h1>Registro de pagos</h1></div>
-  <div>
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Registro de pagos</h1>
+  </div>
+<br />
+  <div style="text-align: center;margin: 5%;">
     <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El código es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
       <mat-form-field class="example-full-width">
-        <mat-label>Pago</mat-label>
-        <input matInput placeholder="123" formControlName="monto" />
+        <mat-label>Monto</mat-label>
+        <input matInput placeholder="s/" formControlName="monto" />
         <mat-error *ngIf="form.get('monto')?.hasError('required')">
           El monto es obligatorio!!
         </mat-error>
       </mat-form-field>
       <br />
-      <br />
+
       <mat-form-field>
         <mat-label>Metodo</mat-label>
-        <mat-select>
+        <mat-select formControlName="metodo">
           @for (t of metodos; track t) {
           <mat-option [value]="t.value">{{ t.viewValue }}</mat-option>
           }
         </mat-select>
       </mat-form-field>
-      <br>
-       <br />
+      <br />
+
       <mat-form-field>
         <mat-label>Fecha:</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="fecha" />
@@ -33,7 +47,7 @@
           La fecha es obligatoria!!
         </mat-error>
       </mat-form-field>
-
+    
       <br />
       <mat-radio-group
         aria-label="Select an option"
@@ -44,8 +58,12 @@
         <mat-radio-button [value]="false">Inactivo</mat-radio-button>
       </mat-radio-group>
       <br />
+
       <button matButton="filled">aceptar</button>
     </form>
   </div>
+</div>
+
+
 
 

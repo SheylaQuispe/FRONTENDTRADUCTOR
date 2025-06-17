@@ -9,8 +9,12 @@ export const routes: Routes = [
         component: PagoComponent,
         children:[{
             path:'insertareditar', component: InsertareditarComponent
-        }]
-    }
+        },
+        {
+            path:'ediciones/:id', component: InsertareditarComponent
+        }
+    ],
+    },
 
 
 ];

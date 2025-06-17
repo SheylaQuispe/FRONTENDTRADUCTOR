@@ -29,4 +29,14 @@ constructor(private http: HttpClient) {}
   setList(listaNueva: Pago[]) {
     this.listaCambio.next(listaNueva);
   }
+  listId(id: number) {
+    return this.http.get<Pago>(`${this.url}/${id}`);
+  }
+
+  update(p: Pago) {
+    return this.http.put(this.url, p);
+  }
+  deleteA(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }
