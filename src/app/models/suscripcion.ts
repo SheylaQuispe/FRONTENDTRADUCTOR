@@ -3,8 +3,8 @@ export class Suscripcion{
     tipo:String=""
     estado:String=""
     fechaInicio:Date=new Date()
-     fechaFin:Date=new Date()
-     historial:String=""
+    fechaFin:Date=new Date()
+    historial:String=""
 }
 
 
