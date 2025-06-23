@@ -36,7 +36,7 @@ private url=`${base_url}/suscripciones`;
 
   update(s: Suscripcion) {
     return this.http.put(this.url, s);
-  }
+  } 
 
   deleteS(id: number) {
     return this.http.delete(`${this.url}/${id}`);
