@@ -1,0 +1,78 @@
+<div class="container">
+  <div style="text-align: center; margin: 5%">
+    <h1>Registro de Usuarios</h1>
+  </div>
+
+  <div style="text-align: center; margin: 5%">
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El código es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Aplicación</mat-label>
+        <input matInput placeholder="Username" formControlName="nombre" />
+        <mat-error *ngIf="form.get('nombre')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Aplicación</mat-label>
+        <input matInput placeholder="Password" formControlName="contrasena" />
+        <mat-error *ngIf="form.get('contrasena')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Monto</mat-label>
+        <input matInput placeholder="123000" formControlName="telefono" />
+        <mat-error *ngIf="form.get('telefono')?.hasError('required')">
+          El monto es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field>
+  <mat-label>Fecha:</mat-label>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    formControlName="fecha"
+    [max]="maxDate"
+  />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle
+    matIconSuffix
+    [for]="picker"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="form.get('fecha')?.hasError('required')">
+    La fecha es obligatoria!!
+  </mat-error>
+</mat-form-field>
+      
+      <br />
+      <mat-radio-group
+        aria-label="Select an option"
+        formControlName="status"
+        [(ngModel)]="estado"
+      >
+        <mat-radio-button [value]="true">Activo</mat-radio-button>
+        <mat-radio-button [value]="false">Inactivo</mat-radio-button>
+      </mat-radio-group>
+      <br />
+      <button matButton="filled">Aceptar</button>
+    </form>
+  </div>
+</div>

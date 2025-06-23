@@ -1,0 +1,130 @@
+<mat-toolbar class="custom-toolbar">
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuUsuarios" class="btn-rojo">
+      <mat-icon>computer</mat-icon>
+      Usuarios
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuTraduccion" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Traduccion
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuSuscripcion" class="btn-rojo">
+      <mat-icon>subscriptions</mat-icon>
+      Suscripcion
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuRoles" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Roles
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuPago" class="btn-rojo">
+      <mat-icon>payments</mat-icon>
+      Pago
+    </button>
+  </div>
+  <div>
+    <button
+      mat-button
+      [matMenuTriggerFor]="menuLenguajeprogramacion"
+      class="btn-rojo"
+    >
+      <mat-icon>book</mat-icon>
+      Lenguajeprogramacion
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuGlosario" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Glosario
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuFeedback" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Feedback
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuEscaneo" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Escaneo
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuCompartir" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Compartir
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuAsistentevirtual"class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      AsistenteVirtual
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #menuUsuarios="matMenu">
+  <button mat-menu-item routerLink="/usuarios">Listar</button>
+  <button mat-menu-item routerLink="/usuarios/insertareditarusuarios">Registrar</button>
+  <button mat-menu-item routerLink="/usuarios/busquedas">Buscar por fecha</button>
+</mat-menu>
+
+<mat-menu #menuTraduccion="matMenu">
+  <button mat-menu-item routerLink="/Traduccion">Listar</button>
+  <button mat-menu-item routerLink="/Traduccion/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuSuscripcion="matMenu">
+  <button mat-menu-item routerLink="/Suscripcion">Listar</button>
+  <button mat-menu-item routerLink="/Suscripcion/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuRoles="matMenu">
+  <button mat-menu-item routerLink="/Traduccion">Listar</button>
+  <button mat-menu-item routerLink="/Traduccion/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuPago="matMenu">
+  <button mat-menu-item routerLink="/pagos">Listar</button>
+  <button mat-menu-item routerLink="/pagos/insertareditar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuLenguajeprogramacion="matMenu">
+  <button mat-menu-item routerLink="/lenguajesprogramacion">Listar</button>
+  <button mat-menu-item routerLink="/lenguajesprogramacion/nuevo">
+    Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuGlosario="matMenu">
+  <button mat-menu-item routerLink="/glosarios">Listar</button>
+  <button mat-menu-item routerLink="/glosarios/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuFeedback="matMenu">
+  <button mat-menu-item routerLink="/feedbacks">Listar</button>
+  <button mat-menu-item routerLink="/feedbacks/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuEscaneo="matMenu">
+  <button mat-menu-item routerLink="/escaneos">Listar</button>
+  <button mat-menu-item routerLink="/escaneos/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuCompartir="matMenu">
+  <button mat-menu-item routerLink="/compartidos">Listar</button>
+  <button mat-menu-item routerLink="/compartidos/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuAsistentevirtual="matMenu">
+  <button mat-menu-item routerLink="/asistentesvirtuales">Listar</button>
+  <button mat-menu-item routerLink="/asistentesvirtuales/nuevo">Registrar</button>
+</mat-menu>

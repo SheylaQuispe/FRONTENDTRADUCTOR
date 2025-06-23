@@ -1,0 +1,81 @@
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Registro de aplicaciones</h1>
+  </div>
+
+  <div style="text-align: center;margin: 5%;">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="idS" />
+        <mat-error *ngIf="form.get('idS')?.hasError('required')">
+          El código es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      
+      <br />
+      <mat-form-field>
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipoS">
+          @for (t of tipos; track t) {
+          <mat-option [value]="t.value">{{ t.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+        <br />
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="activo" formControlName="estadoS" />
+        <mat-error *ngIf="form.get('estadoS')?.hasError('required')">
+          El estado es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+    
+        <br />
+        <mat-form-field>
+        <mat-label>Fecha inicio</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaInicioS" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fechaInicioS')?.hasError('required')">
+          La fecha es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+      
+      <br />
+        <mat-form-field>
+        <mat-label>Fecha termino</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaFinS" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fechaFinS')?.hasError('required')">
+          La fecha termino es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Historia</mat-label>
+        <input matInput placeholder="@" formControlName="historialS" />
+        <mat-error *ngIf="form.get('historialS')?.hasError('required')">
+          El monto es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <button matButton="filled">aceptar</button>
+    </form>
+  </div>
+</div>
