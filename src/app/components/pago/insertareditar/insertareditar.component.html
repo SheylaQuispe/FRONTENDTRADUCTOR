@@ -1,11 +1,10 @@
 <div class="container">
-  <div style="text-align: center;margin: 5%;">
+  <div style="text-align: center; margin: 5%">
     <h1>Registro de pagos</h1>
   </div>
-<br />
-  <div style="text-align: center;margin: 5%;">
+  <br />
+  <div style="text-align: center; margin: 5%">
     <form [formGroup]="form" (submit)="aceptar()">
-
       <mat-form-field class="example-full-width" *ngIf="edicion">
         <mat-label>ID</mat-label>
         <input matInput formControlName="codigo" />
@@ -36,8 +35,13 @@
 
       <mat-form-field>
         <mat-label>Fecha:</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fecha" />
-        <mat-hint>MM/DD/YYYY</mat-hint>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="fecha"
+          [max]="maxDate"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle
           matIconSuffix
           [for]="picker"
@@ -47,12 +51,12 @@
           La fecha es obligatoria!!
         </mat-error>
       </mat-form-field>
-    
+
       <br />
       <mat-radio-group
         aria-label="Select an option"
-        formControlName="estado"
-        [(ngModel)]="estado"
+        formControlName="status"
+        [(ngModel)]="statu"
       >
         <mat-radio-button [value]="true">Activo</mat-radio-button>
         <mat-radio-button [value]="false">Inactivo</mat-radio-button>
@@ -63,7 +67,3 @@
     </form>
   </div>
 </div>
-
-
-
-
