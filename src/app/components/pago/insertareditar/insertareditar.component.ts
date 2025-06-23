@@ -24,7 +24,7 @@ import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material
     MatDatepickerModule,
     MatSelectModule,
     MatButtonModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   templateUrl: './insertareditar.component.html',
   styleUrl: './insertareditar.component.css'
@@ -32,10 +32,12 @@ import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material
 export class InsertareditarComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
+  maxDate: Date = new Date(); 
   pago: Pago = new Pago();
-  estado:boolean=true
+  statu:boolean=true
   id: number = 0;
   edicion: boolean = false;
+
   metodos:{value:string,viewValue:string}[]=[
     {value:"Transferencia",viewValue:"Transferencia"},
     {value:"Yape",viewValue:"Yape"},
@@ -61,7 +63,7 @@ export class InsertareditarComponent implements OnInit {
       monto: ['', Validators.required],
       metodo: ['', Validators.required],
       fecha: ['', Validators.required],
-      estado: ['', Validators.required],
+      status: ['', Validators.required],
     });
   }
   aceptar() {
@@ -70,7 +72,7 @@ export class InsertareditarComponent implements OnInit {
       this.pago.monto = this.form.value.monto;
       this.pago.metodo = this.form.value.metodo;
       this.pago.fechaPago = this.form.value.fecha;
-      this.pago.estado = this.form.value.estado;
+      this.pago.estado = this.form.value.status;
     
      if (this.edicion) {
         //actualizar
@@ -99,7 +101,7 @@ export class InsertareditarComponent implements OnInit {
           monto: new FormControl(data.monto),
           metodo: new FormControl(data.metodo),
           fecha: new FormControl(data.fechaPago),
-          estado: new FormControl(data.estado),
+          status: new FormControl(data.estado),
         });
       });
     }

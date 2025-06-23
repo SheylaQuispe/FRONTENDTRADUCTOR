@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Pago } from '../models/pago';
 import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs';
+
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root',

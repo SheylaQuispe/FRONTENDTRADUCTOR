@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+import { Suscripcion } from '../../../models/suscripcion';
+import { MatTableDataSource } from '@angular/material/table';
+import { SuscripcionService } from '../../../services/suscripcion.service';
+
+@Component({
+  selector: 'app-listarsuscripcion',
+  imports: [],
+  templateUrl: './listarsuscripcion.component.html',
+  styleUrl: './listarsuscripcion.component.css'
+})
+export class ListarsuscripcionComponent implements OnInit{
+
+  dataSource: MatTableDataSource<Suscripcion> = new MatTableDataSource();
+
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'];
+
+  constructor(private sS: SuscripcionService) {}
+
+  ngOnInit(): void {
+    this.sS.list().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+    });
+    this.sS.getList().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+    });
+  }
+    eliminar(id: number) {
+    this.sS.deleteA(id).subscribe((data) => {
+      this.sS.list().subscribe((data) => {
+        this.sS.setList(data);
+      });
+    });
+  }
+}
