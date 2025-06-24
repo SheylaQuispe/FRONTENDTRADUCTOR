@@ -14,7 +14,6 @@ private url = `${base_url}/pagos`;
 private listaCambio = new Subject<Pago[]>();
   
 constructor(private http: HttpClient) {}
-
   list(){
     return this.http.get<Pago[]>(this.url);
   }

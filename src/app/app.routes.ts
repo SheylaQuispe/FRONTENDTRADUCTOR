@@ -1,21 +1,28 @@
 import { Routes } from '@angular/router';
+
 import { PagoComponent } from './components/pago/pago.component';
 import { InsertareditarComponent } from './components/pago/insertareditar/insertareditar.component';
-<<<<<<< HEAD
+
 import { UsersComponent } from './components/users/users.component';
-import { TraduccionComponent } from './components/traduccion/traduccion.component';
-import { SuscripcionComponent } from './components/suscripcion/suscripcion.component';
-import { LenguajeprogramacionComponent } from './components/lenguajeprogramacion/lenguajeprogramacion.component';
-import { GlosarioComponent } from './components/glosario/glosario.component';
-import { FeedbackComponent } from './components/feedback/feedback.component';
-import { EscaneoComponent } from './components/escaneo/escaneo.component';
-import { CompartirComponent } from './components/compartir/compartir.component';
-import { AsistentevirtualComponent } from './components/asistentevirtual/asistentevirtual.component';
 import { InsertareditarusuariosComponent } from './components/users/insertareditarusuarios/insertareditarusuarios.component';
-=======
+
+import { TraduccionComponent } from './components/traduccion/traduccion.component';
+
+import { LenguajeprogramacionComponent } from './components/lenguajeprogramacion/lenguajeprogramacion.component';
+
+import { GlosarioComponent } from './components/glosario/glosario.component';
+
+import { FeedbackComponent } from './components/feedback/feedback.component';
+
+import { EscaneoComponent } from './components/escaneo/escaneo.component';
+
+import { CompartirComponent } from './components/compartir/compartir.component';
+
+import { AsistentevirtualComponent } from './components/asistentevirtual/asistentevirtual.component';
+
 import { SuscripcionComponent } from './components/suscripcion/suscripcion.component';
 import { InsertareditarsuscripcionComponent } from './components/suscripcion/insertareditarsuscripcion/insertareditarsuscripcion.component';
->>>>>>> 89310e524723779633d3ce0714fe52a7430af110
+
 
 export const routes: Routes = [
   {
@@ -24,7 +31,6 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
 
-<<<<<<< HEAD
   {
     path: 'pagos',
     component: PagoComponent,
@@ -39,7 +45,6 @@ export const routes: Routes = [
       },
     ],
   },
-=======
     {
         path:'pagos',
         component: PagoComponent,
@@ -55,8 +60,6 @@ export const routes: Routes = [
         [{path:'insertareditarsuscripcion', component: InsertareditarsuscripcionComponent},
         {path:'ediciones/:id', component: InsertareditarsuscripcionComponent}],
     },
-
->>>>>>> 89310e524723779633d3ce0714fe52a7430af110
 
   {
     path: 'usuarios',

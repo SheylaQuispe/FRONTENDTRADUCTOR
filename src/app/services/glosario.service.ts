@@ -13,7 +13,6 @@ export class GlosarioService {
   private listaCambio = new Subject<Glosario[]>();
 
   constructor(private http: HttpClient) {}
-
    list() {
           return this.http.get<Glosario[]>(this.url);
         }

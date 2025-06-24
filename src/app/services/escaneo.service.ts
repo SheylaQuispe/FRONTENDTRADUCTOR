@@ -13,7 +13,6 @@ export class EscaneoService {
   private listaCambio = new Subject<Escaneo[]>();
 
   constructor(private http: HttpClient) {}
-
      list() {
           return this.http.get<Escaneo[]>(this.url);
         }

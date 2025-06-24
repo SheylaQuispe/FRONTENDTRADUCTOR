@@ -13,7 +13,6 @@ export class LenguajeprogramacionService {
   private listaCambio = new Subject<Lenguajeprogramacion[]>();
 
   constructor(private http: HttpClient) {}
-
    list() {
           return this.http.get<Lenguajeprogramacion[]>(this.url);
         }

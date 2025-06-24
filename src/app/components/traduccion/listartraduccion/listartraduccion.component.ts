@@ -11,9 +11,11 @@ import { TraduccionService } from '../../../services/traduccion.service';
 })
 export class ListartraduccionComponent implements OnInit{
 
-   dataSource: MatTableDataSource<Traduccion> = new MatTableDataSource();
-     displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4'];
-       constructor(private tS: TraduccionService) {}
+  dataSource: MatTableDataSource<Traduccion> = new MatTableDataSource();
+
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4'];
+  
+  constructor(private tS: TraduccionService) {}
      
   ngOnInit(): void {
     this.tS.list().subscribe((data) => {

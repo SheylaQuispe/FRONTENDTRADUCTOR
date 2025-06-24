@@ -14,7 +14,6 @@ export class FeedbackService {
   private listaCambio = new Subject<Feedback[]>();
 
   constructor(private http: HttpClient) {}
-
    list() {
           return this.http.get<Feedback[]>(this.url);
         }

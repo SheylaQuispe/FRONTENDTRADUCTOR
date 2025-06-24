@@ -9,7 +9,7 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class TraduccionService {
-   private url = `${base_url}/traducciones`;
+  private url = `${base_url}/traducciones`;
   private listaCambio = new Subject<Traduccion[]>();
 
   constructor(private http: HttpClient) {}
