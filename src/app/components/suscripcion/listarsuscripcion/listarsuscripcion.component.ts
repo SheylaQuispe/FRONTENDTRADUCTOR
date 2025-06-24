@@ -5,13 +5,16 @@ import { SuscripcionService } from '../../../services/suscripcion.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-listarsuscripcion',
-  imports: [MatTableModule,
+  imports: [
+  MatTableModule,
   CommonModule,
   RouterLink,
-  MatIconModule],
+  MatIconModule,
+  MatButtonModule],
   templateUrl: './listarsuscripcion.component.html',
   styleUrl: './listarsuscripcion.component.css'
 })

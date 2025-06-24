@@ -9,7 +9,7 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class SuscripcionService {
-    private url = `${base_url}/usuarios`;
+    private url = `${base_url}/suscripciones`;
   private listaCambio = new Subject<Suscripcion[]>();
 
   constructor(private http: HttpClient) {}

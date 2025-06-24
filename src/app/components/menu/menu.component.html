@@ -12,7 +12,7 @@
     </button>
   </div>
   <div>
-    <button mat-button [matMenuTriggerFor]="menuSuscripcion" class="btn-rojo">
+    <button mat-button [matMenuTriggerFor]="menuSuscripciones" class="btn-rojo">
       <mat-icon>subscriptions</mat-icon>
       Suscripcion
     </button>
@@ -52,7 +52,7 @@
     </button>
   </div>
   <div>
-    <button mat-button [matMenuTriggerFor]="menuEscaneo" class="btn-rojo">
+    <button mat-button [matMenuTriggerFor]="menuEscaneos" class="btn-rojo">
       <mat-icon>book</mat-icon>
       Escaneo
     </button>
@@ -82,9 +82,9 @@
   <button mat-menu-item routerLink="/Traduccion/nuevo">Registrar</button>
 </mat-menu>
 
-<mat-menu #menuSuscripcion="matMenu">
-  <button mat-menu-item routerLink="/Suscripcion">Listar</button>
-  <button mat-menu-item routerLink="/Suscripcion/nuevo">Registrar</button>
+<mat-menu #menuSuscripciones="matMenu">
+  <button mat-menu-item routerLink="/suscripciones">Listar</button>
+  <button mat-menu-item routerLink="/suscripciones/insertareditarsuscripcion">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuRoles="matMenu">
@@ -114,9 +114,9 @@
   <button mat-menu-item routerLink="/feedbacks/nuevo">Registrar</button>
 </mat-menu>
 
-<mat-menu #menuEscaneo="matMenu">
+<mat-menu #menuEscaneos="matMenu">
   <button mat-menu-item routerLink="/escaneos">Listar</button>
-  <button mat-menu-item routerLink="/escaneos/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/escaneos/insertareditarescaneo">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuCompartir="matMenu">

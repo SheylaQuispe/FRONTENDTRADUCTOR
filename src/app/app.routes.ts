@@ -12,6 +12,7 @@ import { CompartirComponent } from './components/compartir/compartir.component';
 import { AsistentevirtualComponent } from './components/asistentevirtual/asistentevirtual.component';
 import { InsertareditarusuariosComponent } from './components/users/insertareditarusuarios/insertareditarusuarios.component';
 import { InsertareditarsuscripcionComponent } from './components/suscripcion/insertareditarsuscripcion/insertareditarsuscripcion.component';
+import { InsertareditarescaneoComponent } from './components/escaneo/insertareditarescaneo/insertareditarescaneo.component';
 
 export const routes: Routes = [
   {
@@ -84,6 +85,16 @@ export const routes: Routes = [
   {
     path: 'escaneos',
     component: EscaneoComponent,
+    children: [
+      {
+        path: 'insertareditarescaneo', component: InsertareditarescaneoComponent
+        
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertareditarescaneoComponent,
+      },
+    ],
   },
   {
     path: 'compartidos',
