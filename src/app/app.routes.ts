@@ -13,12 +13,17 @@ import { AsistentevirtualComponent } from './components/asistentevirtual/asisten
 import { InsertareditarusuariosComponent } from './components/users/insertareditarusuarios/insertareditarusuarios.component';
 import { InsertareditarsuscripcionComponent } from './components/suscripcion/insertareditarsuscripcion/insertareditarsuscripcion.component';
 import { InsertareditarescaneoComponent } from './components/escaneo/insertareditarescaneo/insertareditarescaneo.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'pagos',
     pathMatch: 'full',
+  },
+  {
+    path: 'homes',
+    component: HomeComponent,
   },
   
     {

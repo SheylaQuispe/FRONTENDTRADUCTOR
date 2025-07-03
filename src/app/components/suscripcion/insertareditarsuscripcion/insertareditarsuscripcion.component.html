@@ -38,13 +38,13 @@
         <br />
         <mat-form-field>
         <mat-label>Fecha inicio</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fechaInicioS" />
+        <input matInput [matDatepicker]="picker1" formControlName="fechaInicioS" />
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle
           matIconSuffix
-          [for]="picker"
+          [for]="picker1"
         ></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker1></mat-datepicker>
         <mat-error *ngIf="form.get('fechaInicioS')?.hasError('required')">
           La fecha es obligatoria!!
         </mat-error>
@@ -53,13 +53,13 @@
       <br />
         <mat-form-field>
         <mat-label>Fecha termino</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fechaFinS" />
+        <input matInput [matDatepicker]="picker2" formControlName="fechaFinS" />
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle
           matIconSuffix
-          [for]="picker"
+          [for]="picker2"
         ></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker2></mat-datepicker>
         <mat-error *ngIf="form.get('fechaFinS')?.hasError('required')">
           La fecha termino es obligatoria!!
         </mat-error>

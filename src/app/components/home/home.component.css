@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Lato Regular, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: rgb(5, 5, 5);
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+.logo-pequeno {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 90px;
+  height: auto;
+  z-index: 1000;
+}
+
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #e5e5e5;
+}
+
+.hero img {
+  width: 400px;
+  height: auto;
+  margin: 10px;
+  background: #ccc;
+}
+
+.hero-text {
+  max-width: 500px;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fdfdfd;
+}
+
+.feature {
+  max-width: 300px;
+  margin: 20px;
+  background: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feature img {
+  width: 40px;
+  height: 40px;
+  background: #bbb;
+  margin-bottom: 10px;
+}
+
+.testimonials {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.testimonial {
+  max-width: 300px;
+  text-align: left;
+  background: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.download {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 30px 20px;
+}
+
+.download img {
+  width: 150px;
+  margin: 10px;
+}
+
+footer {
+  background: #000000;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .footer-section {
+  margin: 10px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .features,
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

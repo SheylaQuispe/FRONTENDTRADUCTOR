@@ -1,6 +1,7 @@
 import { Suscripcion } from "./suscripcion"
 
 
+
 export class Pago{
     idPago:number=0
     monto:number=0

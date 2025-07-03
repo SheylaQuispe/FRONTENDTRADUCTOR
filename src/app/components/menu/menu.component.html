@@ -1,4 +1,10 @@
-<mat-toolbar class="custom-toolbar">
+
+<mat-toolbar class="custom-toolbar" color="primary">  
+  
+    <button mat-button [routerLink]="['/homes']" style="color: rgb(0, 0, 0)">
+    <img src="assets/logo1.png" alt="logo 1" class="logo-pequeno" />
+  </button>
+  
   <div>
     <button mat-button [matMenuTriggerFor]="menuUsuarios" class="btn-rojo">
       <mat-icon>computer</mat-icon>
@@ -13,7 +19,7 @@
   </div>
   <div>
     <button mat-button [matMenuTriggerFor]="menuSuscripciones" class="btn-rojo">
-      <mat-icon>subscriptions</mat-icon>
+      <mat-icon>group_add</mat-icon>
       Suscripcion
     </button>
   </div>
@@ -25,7 +31,7 @@
   </div>
   <div>
     <button mat-button [matMenuTriggerFor]="menuPago" class="btn-rojo">
-      <mat-icon>payments</mat-icon>
+      <mat-icon>attach_money</mat-icon>
       Pago
     </button>
   </div>
@@ -53,7 +59,7 @@
   </div>
   <div>
     <button mat-button [matMenuTriggerFor]="menuEscaneos" class="btn-rojo">
-      <mat-icon>book</mat-icon>
+      <mat-icon>scanner</mat-icon>
       Escaneo
     </button>
   </div>

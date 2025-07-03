@@ -62,7 +62,15 @@
         <mat-radio-button [value]="false">Inactivo</mat-radio-button>
       </mat-radio-group>
       <br />
-
+      <mat-form-field>
+        <mat-label>Suscripciones</mat-label>
+        <mat-select formControlName="sus">
+          @for (food of listaSuscripciones; track food) {
+          <mat-option [value]="food.idSuscripcion">{{ food.idSuscripcion }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+<br />
       <button matButton="filled">aceptar</button>
     </form>
   </div>

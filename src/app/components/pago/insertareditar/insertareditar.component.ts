@@ -1,3 +1,4 @@
+import { Suscripcion } from './../../../models/suscripcion';
 import { Component, OnInit } from '@angular/core';
 import { PagoService } from '../../../services/pago.service';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -11,6 +12,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core'
+import { SuscripcionService } from '../../../services/suscripcion.service';
 
 @Component({
   selector: 'app-insertareditar',
@@ -37,7 +39,7 @@ export class InsertareditarComponent implements OnInit {
   statu:boolean=true
   id: number = 0;
   edicion: boolean = false;
-
+  listaSuscripciones:Suscripcion[] = [];
   metodos:{value:string,viewValue:string}[]=[
     {value:"Transferencia",viewValue:"Transferencia"},
     {value:"Yape",viewValue:"Yape"},
@@ -47,7 +49,8 @@ export class InsertareditarComponent implements OnInit {
     private pS: PagoService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sS:SuscripcionService
   ) { }
 
   ngOnInit(): void {
@@ -64,7 +67,11 @@ export class InsertareditarComponent implements OnInit {
       metodo: ['', Validators.required],
       fecha: ['', Validators.required],
       status: ['', Validators.required],
+      sus: ['', Validators.required],
     });
+    this.sS.list().subscribe((data) => {
+      this.listaSuscripciones = data;
+    })
   }
   aceptar() {
     if (this.form.valid) {
@@ -73,6 +80,7 @@ export class InsertareditarComponent implements OnInit {
       this.pago.metodo = this.form.value.metodo;
       this.pago.fechaPago = this.form.value.fecha;
       this.pago.estado = this.form.value.status;
+      this.pago.idSuscripcion.idSuscripcion = this.form.value.sus;
     
      if (this.edicion) {
         //actualizar
@@ -102,6 +110,7 @@ export class InsertareditarComponent implements OnInit {
           metodo: new FormControl(data.metodo),
           fecha: new FormControl(data.fechaPago),
           status: new FormControl(data.estado),
+          sus: new FormControl(data.idSuscripcion?.idSuscripcion),
         });
       });
     }

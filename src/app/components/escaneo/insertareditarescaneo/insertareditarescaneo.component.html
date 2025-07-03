@@ -1,9 +1,9 @@
 <div class="container">
-  <div style="text-align: center;margin: 5%;">
+  <div style="text-align: center; margin: 5%">
     <h1>Registro de Escaneos</h1>
   </div>
 
-  <div style="text-align: center;margin: 5%;">
+  <div style="text-align: center; margin: 5%">
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field class="example-full-width" *ngIf="edicion">
         <mat-label>ID</mat-label>
@@ -12,18 +12,27 @@
           El código es obligatorio!!
         </mat-error>
       </mat-form-field>
+
       <br />
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Imagen</mat-label>
-        <input matInput placeholder="TikTok" formControlName="eimagen" />
-        <mat-error *ngIf="form.get('eimagen')?.hasError('required')">
-          El nombre es obligatorio!!
-        </mat-error>
+      <input type="file" (change)="cargarImagen($event)" accept="image/*" />
+
+      <br />
+      <mat-form-field appearance="fill" *ngIf="textoExtraido">
+        <mat-label>Texto detectado</mat-label>
+        <textarea matInput [value]="textoExtraido" rows="5" readonly></textarea>
       </mat-form-field>
       <br />
-
-        <mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="extraerTexto()"
+        [disabled]="!imagenBase64"
+      >
+        Extraer texto de la imagen
+      </button>
+      <br />
+      <mat-form-field>
         <mat-label>Fecha inicio</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="efecha" />
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -36,7 +45,7 @@
           La fecha es obligatoria!!
         </mat-error>
       </mat-form-field>
-      
+
       <br />
       <button matButton="filled">Aceptar</button>
     </form>

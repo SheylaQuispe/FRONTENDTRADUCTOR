@@ -1,8 +1,8 @@
 export class Escaneo{
     idEscaneo:number=0
-    imagen:String=""
+    imagen:string=""
     fechaEscaneo:Date= new Date()
-
+    textoExtraido?: string;
 }
 
 
