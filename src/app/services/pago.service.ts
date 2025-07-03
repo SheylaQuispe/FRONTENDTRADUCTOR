@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pago } from '../models/pago';
 import { environment } from '../../environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { PagoRecaudacionDto } from '../models/PagoRecaudacionDto';
 
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root',
 })
 export class PagoService {
-
+fechaPago: Date = new Date(); 
 private url = `${base_url}/pagos`;
 private listaCambio = new Subject<Pago[]>();
   
@@ -39,5 +40,8 @@ constructor(private http: HttpClient) {}
   }
   deleteA(id: number) {
     return this.http.delete(`${this.url}/${id}`);
+  }
+  getSum(fecha: string): Observable<PagoRecaudacionDto[]> {
+    return this.http.get<PagoRecaudacionDto[]>(`${this.url}/recaudaciones/${fecha}`);
   }
 }

@@ -14,6 +14,8 @@ import { InsertareditarusuariosComponent } from './components/users/insertaredit
 import { InsertareditarsuscripcionComponent } from './components/suscripcion/insertareditarsuscripcion/insertareditarsuscripcion.component';
 import { InsertareditarescaneoComponent } from './components/escaneo/insertareditarescaneo/insertareditarescaneo.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReportepagorecaudacionComponent } from './components/reportes/reportepagorecaudacion/reportepagorecaudacion.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 
 export const routes: Routes = [
   {
@@ -109,4 +111,15 @@ export const routes: Routes = [
     path: 'asistentesvirtuales',
     component: AsistentevirtualComponent,
   },
+  {
+    path:'reportes',component:ReportesComponent,
+    children:[
+      {
+        path:'recaudaciones/fecha',component:ReportepagorecaudacionComponent
+      }
+    ],
+    
+
+  }
+   ,
 ];

@@ -1,0 +1,31 @@
+<body>
+  <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+  </div>
+<div class="title-container">
+  <br />
+  <div style="text-align: center" class="title">
+    <h1>Monto reportado por fecha</h1>
+  </div>
+  <div class="fecha-container">
+    <br />
+    <label for="fecha">Selecciona una fecha:</label>
+    <br />
+    <input type="date" [(ngModel)]="fechaSeleccionada" />
+    <br />
+    <button class="btn btn-border-reveal" (click)="buscarRecaudacion()">BUSCAR</button>
+  </div>
+  <div style="text-align: center" class="chart-container">
+    <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [type]="barChartType"
+    ></canvas>
+  </div>
+</div>
+</body>

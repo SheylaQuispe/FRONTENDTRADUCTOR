@@ -1,0 +1,56 @@
+
+.fecha-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 18px; /* Tamaño general de letra */
+}
+.fecha-container input[type="date"] {
+  padding: 10px 15px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+.fecha-container input[type="date"]:hover,
+.fecha-container input[type="date"]:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+  background-color: #fff;
+}
+.chart-container {
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  align-items: center;      /* Centra verticalmente */
+  height: 500px;            /* Ajusta según el tamaño deseado */
+  margin-top: 100px;         /* Separación del input de fecha */
+  text-align: center;
+}
+.btn-border-reveal {
+  background-color: transparent;
+  color: #142d89;
+  border: 2px solid #142d89;
+  position: relative;
+}
+
+.btn-border-reveal::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #146889;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-border-reveal:hover::after {
+  width: 100%;
+}
+
+.btn-border-reveal:hover {
+  color: white;
+}

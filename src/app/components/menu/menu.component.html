@@ -75,6 +75,12 @@
       AsistenteVirtual
     </button>
   </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+   <mat-icon>file_copy</mat-icon>
+   Reportes
+  </button>
+ </div>
 </mat-toolbar>
 
 <mat-menu #menuUsuarios="matMenu">
@@ -134,3 +140,7 @@
   <button mat-menu-item routerLink="/asistentesvirtuales">Listar</button>
   <button mat-menu-item routerLink="/asistentesvirtuales/nuevo">Registrar</button>
 </mat-menu>
+
+<mat-menu #menuReportes="matMenu">
+  <button mat-menu-item routerLink="reportes/recaudaciones/fecha">Reporte recaudado por fecha</button>
+ </mat-menu>

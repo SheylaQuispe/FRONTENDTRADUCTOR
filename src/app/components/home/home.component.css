@@ -23,6 +23,8 @@ header {
 .logo {
   font-weight: bold;
   font-size: 18px;
+  height: auto;
+  width: 250px;
 }
 .logo-pequeno {
   position: absolute;

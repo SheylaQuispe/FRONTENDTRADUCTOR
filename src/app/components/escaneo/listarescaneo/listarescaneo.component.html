@@ -28,7 +28,7 @@
         <ng-container matColumnDef="c4">
           <th mat-header-cell *matHeaderCellDef>Actualizar</th>
           <td mat-cell *matCellDef="let element">
-            <button matButton [routerLink]="['ediciones',element.idEscaneo]" >
+            <button matButton class="btn-wobble" [routerLink]="['ediciones',element.idEscaneo]" >
               <mat-icon>edit</mat-icon>
             </button>
           </td>
@@ -39,6 +39,7 @@
               <th mat-header-cell *matHeaderCellDef>Eliminar</th>
               <td mat-cell *matCellDef="let element">
                 <button matButton
+                class="btn-wobble"
                   (click)="eliminar(element.idEscaneo)"
                   >
                   <mat-icon>delete</mat-icon>
