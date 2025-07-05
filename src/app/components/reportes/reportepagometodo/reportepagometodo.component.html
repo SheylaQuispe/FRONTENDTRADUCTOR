@@ -1,0 +1,18 @@
+<h1 class="shadow-dance-text">Reporte de Pago por Metodo (YAPE o TRANSFERENCIA)</h1>
+
+<br>
+<div style="text-align: center" class="chart-container" *ngIf="hasData">
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [type]="barChartType"
+  ></canvas>
+</div>
+
+<div *ngIf="!hasData" class="no-data">
+  No hay datos disponibles para mostrar.
+</div>
+

@@ -4,6 +4,7 @@ import { Pago } from '../models/pago';
 import { environment } from '../../environments/environment';
 import { Observable, Subject } from 'rxjs';
 import { PagoRecaudacionDto } from '../models/PagoRecaudacionDto';
+import { PagoMetodoDto } from '../models/pagometodoDto';
 
 const base_url = environment.base;
 @Injectable({
@@ -43,5 +44,8 @@ constructor(private http: HttpClient) {}
   }
   getSum(fecha: string): Observable<PagoRecaudacionDto[]> {
     return this.http.get<PagoRecaudacionDto[]>(`${this.url}/recaudaciones/${fecha}`);
+  }
+  getSumMetodo(): Observable<PagoMetodoDto[]> {
+    return this.http.get<PagoMetodoDto[]>(`${this.url}/metodos`);
   }
 }

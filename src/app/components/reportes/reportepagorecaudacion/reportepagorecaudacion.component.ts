@@ -51,8 +51,8 @@ export class ReportepagorecaudacionComponent implements OnInit {
           data: data.map((item) => item.monto),
           label: 'Monto recaudado',
           backgroundColor: ['#2196f3', '#e8745b', '#ffb74d', '#4caf50'],
-          borderColor: '#1976d2',
-          borderWidth: 1,
+          borderColor: '#000000',
+          borderWidth: 3,
         },
       ];
     });

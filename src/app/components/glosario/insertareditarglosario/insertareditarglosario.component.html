@@ -1,0 +1,37 @@
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Registro Glosario </h1>
+  </div>
+
+  <div style="text-align: center;margin: 5%;">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="idg" />
+        <mat-error *ngIf="form.get('idg')?.hasError('required')">
+          El código es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Palabra</mat-label>
+        <input matInput placeholder="TikTok" formControlName="palabrag" />
+        <mat-error *ngIf="form.get('palabrag')?.hasError('required')">
+          La palabra es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput placeholder="v1" formControlName="descripciong" />
+        <mat-error *ngIf="form.get('descripciong')?.hasError('required')">
+          La descripcion es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button matButton="filled">Aceptar</button>
+    </form>
+  </div>
+</div>
+

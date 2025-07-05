@@ -1,3 +1,4 @@
+import { ReportepagometodoComponent } from './components/reportes/reportepagometodo/reportepagometodo.component';
 import { Routes } from '@angular/router';
 import { PagoComponent } from './components/pago/pago.component';
 import { InsertareditarComponent } from './components/pago/insertareditar/insertareditar.component';
@@ -16,6 +17,7 @@ import { InsertareditarescaneoComponent } from './components/escaneo/insertaredi
 import { HomeComponent } from './components/home/home.component';
 import { ReportepagorecaudacionComponent } from './components/reportes/reportepagorecaudacion/reportepagorecaudacion.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
+import { InsertareditarglosarioComponent } from './components/glosario/insertareditarglosario/insertareditarglosario.component';
 
 export const routes: Routes = [
   {
@@ -84,6 +86,14 @@ export const routes: Routes = [
   {
     path: 'glosarios',
     component: GlosarioComponent,
+    children:[
+      {
+        path:'insertareditarglosario', component: InsertareditarglosarioComponent,
+      },
+      {
+        path:'ediciones/:id', component: InsertareditarglosarioComponent,
+      }
+    ]
   },
   {
     path: 'feedbacks',
@@ -116,10 +126,12 @@ export const routes: Routes = [
     children:[
       {
         path:'recaudaciones/fecha',component:ReportepagorecaudacionComponent
+      },
+      {
+        path:'metodos',component:ReportepagometodoComponent
       }
     ],
     
 
-  }
-   ,
+  },
 ];

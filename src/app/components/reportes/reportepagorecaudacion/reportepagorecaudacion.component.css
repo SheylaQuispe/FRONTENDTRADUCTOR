@@ -54,3 +54,21 @@
 .btn-border-reveal:hover {
   color: white;
 }
+.shadow-dance-text {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 5px 5px 0 #000000, 10px 10px 0 #00d5fff1;
+    animation: shadow-dance 2s infinite;
+    display: flex;
+    margin-top: 6rem;          /* espacio debajo del menú */
+    justify-content: center; 
+  
+}
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 #000000, 10px 10px 0 #00d5fff1;
+    }
+    50% {
+        text-shadow: -5px -5px 0 #00d5fff1, -10px -10px 0 #6d6c6c;
+    }
+}
