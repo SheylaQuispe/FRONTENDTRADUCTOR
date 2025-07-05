@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Glosario } from '../models/glosario';
 import { HttpClient } from '@angular/common/http';
+import { MostrarFrecuenciaPalabrasDto } from '../models/mostrarfrecuenciapalabrasDto';
 
 const base_url = environment.base;
 @Injectable({
@@ -38,4 +39,7 @@ export class GlosarioService {
   deleteA(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }
+  getPalabrasFrecuentes(): Observable<MostrarFrecuenciaPalabrasDto[]> {
+      return this.http.get<MostrarFrecuenciaPalabrasDto[]>(`${this.url}/palabrasMasFrecuentes`);
+    }
 }

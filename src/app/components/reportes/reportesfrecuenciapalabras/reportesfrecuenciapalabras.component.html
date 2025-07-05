@@ -1,0 +1,18 @@
+<div class="titulo-central">
+  <h1 class="shadow-dance-text">Palabras más frecuentes del glosario</h1>
+</div>
+<br/>
+<div *ngIf="hasData; else sinDatos" class="chart-container">
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [type]="barChartType">
+  </canvas>
+</div>
+
+<ng-template #sinDatos>
+  <p style="text-align: center; font-style: italic;">No hay datos disponibles para mostrar.</p>
+</ng-template>

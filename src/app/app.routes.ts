@@ -1,3 +1,4 @@
+import { ReportesfrecuenciapalabrasComponent } from './components/reportes/reportesfrecuenciapalabras/reportesfrecuenciapalabras.component';
 import { ReportepagometodoComponent } from './components/reportes/reportepagometodo/reportepagometodo.component';
 import { Routes } from '@angular/router';
 import { PagoComponent } from './components/pago/pago.component';
@@ -129,6 +130,9 @@ export const routes: Routes = [
       },
       {
         path:'metodos',component:ReportepagometodoComponent
+      },
+      {
+        path:'palabrasmasfrecuentes', component:ReportesfrecuenciapalabrasComponent
       }
     ],
     
